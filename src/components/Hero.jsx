@@ -23,11 +23,23 @@ export default function Hero() {
         </div>
 
         <aside className="hero-side-card">
-          <span className="hero-side-card__eyebrow">Un poco sobre mi hobby</span>
-          <h3>GameDev &amp; Lógica 2D</h3>
-          <p>
-            Fuera del desarrollo web, utilizo el desarrollo de videojuegos 2D como un laboratorio técnico. Exploro la lógica de sistemas, arquitecturas complejas y física personalizada, evolucionando proyectos desde Python (Pygame) hacia Godot Engine (GDScript).
-          </p>
+          <div className="hero-side-block">
+            <span className="hero-side-card__eyebrow">Objetivo Profesional</span>
+            <h3>Búsqueda Activa</h3>
+            <p>
+              Orientado a posiciones como <strong>Desarrollador Full-Stack / Backend Junior</strong>. Disponible para modalidades de trabajo remoto o híbrido, enfocado en participar en proyectos con arquitecturas modernas e integración de APIs REST.
+            </p>
+          </div>
+
+          <hr className="hero-divider" />
+
+          <div className="hero-side-block">
+            <span className="hero-side-card__eyebrow">Un poco sobre mi hobby</span>
+            <h3>GameDev &amp; Lógica 2D</h3>
+            <p>
+              Fuera del desarrollo web, utilizo el desarrollo de videojuegos 2D como un laboratorio técnico. Exploro la lógica de sistemas, arquitecturas complejas y física personalizada, evolucionando proyectos desde Python (Pygame) hacia Godot Engine (GDScript).
+            </p>
+          </div>
         </aside>
       </div>
     </section>
