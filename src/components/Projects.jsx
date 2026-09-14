@@ -4,6 +4,7 @@ import { FaGithub, FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
 import dashboardImg from '../img/dashboard.png';
 import reservaImg from '../img/reserva.png';
 import proveedoresImg from '../img/proveedores.png';
+import numeriaImg from '../img/numeria.png';
 
 const projects = [
   {
@@ -20,6 +21,17 @@ const projects = [
     ]
   },
   {
+    id: 4,
+    title: 'Numeria - Gestor de Stock & Asistente IA',
+    description: 'Sistema de gestión de ventas, proveedores e inventario con control de productos críticos. Integra a "Numerito AI", un asistente inteligente potenciado por la API de Gemini para consultas operacionales en tiempo real.',
+    tags: ['React', 'TypeScript', 'Node.js', 'Python', 'Gemini API', 'SQL'],
+    githubUrl: '', // Se agregará al estar avanzado el repositorio
+    featured: true,
+    images: [
+      { url: numeriaImg, alt: 'Dashboard Numeria con Asistente IA' }
+    ]
+  },
+  {
     id: 2,
     title: 'Trimly - SaaS de Gestión Integral',
     description: 'Plataforma integral para centros de estética y peluquerías. Integra 9 módulos y más de 40 funcionalidades para automatizar turnos, caja y gestión de clientes.',
@@ -33,14 +45,6 @@ const projects = [
     description: 'Herramienta desarrollada para el cálculo automatizado de varianza, desviación estándar y distribución de frecuencias con procesamiento rápido de datos.',
     tags: ['Python', 'Librerías Matemáticas'],
     githubUrl: 'https://github.com/TomasAliberti07/Estadistica',
-    featured: false
-  },
-  {
-    id: 4,
-    title: 'Suite de Utilidades de Escritorio',
-    description: 'Colección de aplicaciones de escritorio orientadas al procesamiento de datos, lógica algorítmica y gestión gráfica (películas, generadores y herramientas de cálculo).',
-    tags: ['Python', 'Tkinter', 'POO'],
-    githubUrl: 'https://github.com/TomasAliberti07/Tkinter',
     featured: false
   }
 ];
@@ -110,15 +114,19 @@ function ProjectCard({ project }) {
               </div>
 
               <div className="project-footer">
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="footer-link"
-                >
-                  <FaGithub />
-                  <span>Ver repositorio completo</span>
-                </a>
+                {project.githubUrl ? (
+                  <a 
+                    href={project.githubUrl} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="footer-link"
+                  >
+                    <FaGithub />
+                    <span>Ver repositorio completo</span>
+                  </a>
+                ) : (
+                  <span className="footer-link-disabled">Repositorio en desarrollo</span>
+                )}
               </div>
             </div>
           </div>
@@ -129,6 +137,15 @@ function ProjectCard({ project }) {
 
   return (
     <article className="project-card">
+      {project.images && project.images.length > 0 && (
+        <div className="card-image-wrapper">
+          <img 
+            src={project.images[0].url} 
+            alt={project.images[0].alt} 
+            className="project-card-image" 
+          />
+        </div>
+      )}
       <div className="project-card-body">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
@@ -142,15 +159,19 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="project-footer">
-          <a 
-            href={project.githubUrl} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="footer-link"
-          >
-            <FaGithub />
-            <span>Ver repositorio completo</span>
-          </a>
+          {project.githubUrl ? (
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="footer-link"
+            >
+              <FaGithub />
+              <span>Ver repositorio completo</span>
+            </a>
+          ) : (
+            <span className="footer-link-disabled">Repositorio en desarrollo</span>
+          )}
         </div>
       </div>
     </article>
