@@ -25,7 +25,7 @@ const projects = [
     title: 'Numeria - Gestor de Stock & Asistente IA',
     description: 'Sistema de gestión de ventas, proveedores e inventario con control de productos críticos. Integra a "Numerito AI", un asistente inteligente potenciado por la API de Gemini para consultas operacionales en tiempo real.',
     tags: ['React', 'TypeScript', 'Node.js', 'Python', 'Gemini API', 'SQL'],
-    githubUrl: '', // Se agregará al estar avanzado el repositorio
+    githubUrl: 'https://github.com/TomasAliberti07/Numeria',
     featured: true,
     images: [
       { url: numeriaImg, alt: 'Dashboard Numeria con Asistente IA' }
